@@ -90,11 +90,15 @@ namespace DVLD.People
 
                 }
             }
+            else
+                dataGridView1.DataSource = ClsBussinessperson.list_all().ToList();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Frm_add_edit_person frm = new Frm_add_edit_person(-1);
+            frm.ShowDialog();
+            _refresh();
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -116,14 +120,14 @@ namespace DVLD.People
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Add_Edit_Person frm = new Add_Edit_Person((int)dataGridView1.CurrentRow.Cells[0].Value);
+            Frm_add_edit_person frm = new Frm_add_edit_person((int)dataGridView1.CurrentRow.Cells[0].Value);
             frm.ShowDialog();
             _refresh();
         }
 
         private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Person_Info frm = new Person_Info((int)dataGridView1.CurrentRow.Cells[0].Value);
+            Frm_person_info frm = new Frm_person_info((int)dataGridView1.CurrentRow.Cells[0].Value);
             frm.ShowDialog();
         }
     }
