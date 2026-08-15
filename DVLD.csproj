@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People\Control\Cntrl_Add_Edit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="People\Control\Cntrl_Add_Edit.Designer.cs">
+      <DependentUpon>Cntrl_Add_Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People\Control\Cntrl_Show.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="People\Control\Cntrl_Show.Designer.cs">
+      <DependentUpon>Cntrl_Show.cs</DependentUpon>
     </Compile>
     <Compile Include="People\FrmListPeople.cs">
       <SubType>Form</SubType>
@@ -60,8 +72,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\Control\Cntrl_Add_Edit.resx">
+      <DependentUpon>Cntrl_Add_Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\Control\Cntrl_Show.resx">
+      <DependentUpon>Cntrl_Show.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="People\FrmListPeople.resx">
       <DependentUpon>FrmListPeople.cs</DependentUpon>

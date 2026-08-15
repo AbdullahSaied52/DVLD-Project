@@ -106,5 +106,25 @@ namespace DVLD.People
                 _refresh();
             }
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == 0)
+                dataGridView1.DataSource = ClsBussinessperson.list_all();
+            textBox1.Visible = (comboBox1.Text != "None");
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Add_Edit_Person frm = new Add_Edit_Person((int)dataGridView1.CurrentRow.Cells[0].Value);
+            frm.ShowDialog();
+            _refresh();
+        }
+
+        private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Person_Info frm = new Person_Info((int)dataGridView1.CurrentRow.Cells[0].Value);
+            frm.ShowDialog();
+        }
     }
 }
