@@ -40,7 +40,7 @@ namespace Bussiness_Layer
             ClsDataUser.delete_user(id);
         }
 
-        public static DTOUser login(string name)
+        public static DTOUser get_user_by_username(string name)
         {
             return ClsDataUser.get_user_by_username(name);
         }
