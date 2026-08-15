@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DTOPeople
+namespace DTOPerson_namespace
 {
-    public class ClsPeople
+    public class DTOPerson
     {
          
         public int PersonID { get; set; }
@@ -23,7 +23,7 @@ namespace DTOPeople
         public string Email { get; set; }
         public string Country { get; set; }
 
-        public ClsPeople()
+        public DTOPerson()
         {
             this.PersonID = -1;
             this.NationalNo = "";
@@ -38,7 +38,7 @@ namespace DTOPeople
             this.Email = "";
             this.Country = "";
         }
-        public ClsPeople(int personID, string nationalNo, string firstName, string secondName,
+        public DTOPerson(int personID, string nationalNo, string firstName, string secondName,
                       string thirdName, string lastName, DateTime dateOfBirth, byte gendor,
                       string address, string phone, string email, string nationalityCountryID)
         {
