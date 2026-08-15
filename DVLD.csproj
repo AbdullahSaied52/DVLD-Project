@@ -93,6 +93,10 @@
     <None Include="Resources\Gemini_Generated_Image_c4mr83c4mr83c4mr.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Bussiness_Layer\Bussiness_Layer.csproj">
+      <Project>{0b716a8c-0ae7-4ca8-9c3f-9a1169c08282}</Project>
+      <Name>Bussiness_Layer</Name>
+    </ProjectReference>
     <ProjectReference Include="DTOPeople\DTOPeople.csproj">
       <Project>{690d95df-a661-460b-b8b8-38c2898d7548}</Project>
       <Name>DTOPeople</Name>

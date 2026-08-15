@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DVLD.People;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,8 @@ namespace DVLD
 
         private void peopleToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            FrmListPeople frm = new FrmListPeople();
+            frm.Show();
         }
     }
 }
