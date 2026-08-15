@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DTOUsers
+namespace DTOUsers_namespace
 {
-    public class ClsUser
+    public class DTOUser
     {
         public int id { get; set; }
         public string name { get; set; }
@@ -14,7 +14,7 @@ namespace DTOUsers
         public bool active { get; set; }
         public int personid { get; set; }
 
-        public ClsUser()
+        public DTOUser()
         {
             id = -1;
             name = "";
@@ -22,7 +22,7 @@ namespace DTOUsers
             active = false;
             personid = -1;
         }
-        public ClsUser (int id, int personid, string name, string pass, bool active)
+        public DTOUser (int id, int personid, string name, string pass, bool active)
         {
             this.id = id;
             this.name = name;
