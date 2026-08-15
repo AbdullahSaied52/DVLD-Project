@@ -8,7 +8,7 @@ namespace DTOPeople
 {
     public class ClsPeople
     {
-         {
+         
         public int PersonID { get; set; }
         public string NationalNo { get; set; }
         public string FirstName { get; set; }
@@ -70,4 +70,4 @@ namespace DTOPeople
         }
     }
 }
-}
+
