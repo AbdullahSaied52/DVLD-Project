@@ -52,6 +52,13 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Global_info\ClsGlobal.cs" />
+    <Compile Include="Login\Frm_login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Frm_login.Designer.cs">
+      <DependentUpon>Frm_login.cs</DependentUpon>
+    </Compile>
     <Compile Include="People\Control\Cntrl_Add_Edit.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -70,10 +77,26 @@
     <Compile Include="People\FrmListPeople.Designer.cs">
       <DependentUpon>FrmListPeople.cs</DependentUpon>
     </Compile>
+    <Compile Include="People\Frm_add_edit_person.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="People\Frm_add_edit_person.Designer.cs">
+      <DependentUpon>Frm_add_edit_person.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People\Frm_person_info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="People\Frm_person_info.Designer.cs">
+      <DependentUpon>Frm_person_info.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Users\ClsSaveLastLogin.cs" />
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Frm_login.resx">
+      <DependentUpon>Frm_login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="People\Control\Cntrl_Add_Edit.resx">
       <DependentUpon>Cntrl_Add_Edit.cs</DependentUpon>
@@ -83,6 +106,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="People\FrmListPeople.resx">
       <DependentUpon>FrmListPeople.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\Frm_add_edit_person.resx">
+      <DependentUpon>Frm_add_edit_person.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\Frm_person_info.resx">
+      <DependentUpon>Frm_person_info.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -123,6 +152,9 @@
       <Project>{0058f63f-bd61-471c-bfa5-68b0da4b2f6f}</Project>
       <Name>DTOUsers</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Users\Control\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

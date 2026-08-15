@@ -1,4 +1,5 @@
-﻿using DVLD.People;
+﻿using DVLD.Login;
+using DVLD.People;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +14,11 @@ namespace DVLD
 {
     public partial class FrmMain : Form
     {
-        public FrmMain()
+        Frm_login _login;
+        public FrmMain(Frm_login frm)
         {
             InitializeComponent();
+            _login = frm;
         }
 
         private void peopleToolStripMenuItem1_Click(object sender, EventArgs e)
