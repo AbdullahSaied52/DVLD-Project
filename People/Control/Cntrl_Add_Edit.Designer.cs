@@ -258,6 +258,8 @@
             this.txtnationalnumber.Name = "txtnationalnumber";
             this.txtnationalnumber.Size = new System.Drawing.Size(160, 20);
             this.txtnationalnumber.TabIndex = 36;
+            this.txtnationalnumber.TextChanged += new System.EventHandler(this.txtnationalnumber_TextChanged);
+            this.txtnationalnumber.Validating += new System.ComponentModel.CancelEventHandler(this.nationalnumber_validate);
             // 
             // txtthname
             // 
@@ -272,6 +274,7 @@
             this.txtsname.Name = "txtsname";
             this.txtsname.Size = new System.Drawing.Size(160, 20);
             this.txtsname.TabIndex = 34;
+            this.txtsname.Validating += new System.ComponentModel.CancelEventHandler(this.seconname_validate);
             // 
             // txtemail
             // 
@@ -286,6 +289,7 @@
             this.txtfname.Name = "txtfname";
             this.txtfname.Size = new System.Drawing.Size(160, 20);
             this.txtfname.TabIndex = 39;
+            this.txtfname.Validating += new System.ComponentModel.CancelEventHandler(this.firstname_validate);
             // 
             // txtphone
             // 

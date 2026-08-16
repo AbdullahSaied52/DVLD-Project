@@ -104,7 +104,44 @@ namespace DVLD.People.Control
             }
             MessageBox.Show("saved");
         }
-        private void national_number_validate(object sender, CancelEventArgs e)
+
+
+        private void firstname_validate(object sender, CancelEventArgs e)
+        {
+            TextBox Temp = ((TextBox)sender);
+            if (string.IsNullOrEmpty(Temp.Text.Trim()))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(Temp, "This field is required!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(Temp, null);
+            }
+        }
+
+        private void seconname_validate(object sender, CancelEventArgs e)
+        {
+            TextBox Temp = ((TextBox)sender);
+            if (string.IsNullOrEmpty(Temp.Text.Trim()))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(Temp, "This field is required!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(Temp, null);
+            }
+        }
+
+        private void txtnationalnumber_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nationalnumber_validate(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrEmpty(txtnationalnumber.Text.Trim()))
             {
@@ -123,39 +160,9 @@ namespace DVLD.People.Control
             }
             else
             {
+                e.Cancel = false;
                 errorProvider1.SetError(txtnationalnumber, null);
             }
         }
-
-        private void firstname_validate(object sender, CancelEventArgs e)
-        {
-            TextBox Temp = ((TextBox)sender);
-            if (string.IsNullOrEmpty(Temp.Text.Trim()))
-            {
-                e.Cancel = true;
-                errorProvider1.SetError(Temp, "This field is required!");
-            }
-            else
-            {
-                //e.Cancel = false;
-                errorProvider1.SetError(Temp, null);
-            }
-        }
-
-        private void seconname_validate(object sender, CancelEventArgs e)
-        {
-            TextBox Temp = ((TextBox)sender);
-            if (string.IsNullOrEmpty(Temp.Text.Trim()))
-            {
-                e.Cancel = true;
-                errorProvider1.SetError(Temp, "This field is required!");
-            }
-            else
-            {
-                //e.Cancel = false;
-                errorProvider1.SetError(Temp, null);
-            }
-        }
-
     }
 }
