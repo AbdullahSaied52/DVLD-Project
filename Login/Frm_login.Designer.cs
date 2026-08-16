@@ -54,6 +54,7 @@
             // 
             this.txtpass.Location = new System.Drawing.Point(502, 209);
             this.txtpass.Name = "txtpass";
+            this.txtpass.PasswordChar = '*';
             this.txtpass.Size = new System.Drawing.Size(100, 20);
             this.txtpass.TabIndex = 1;
             this.txtpass.Validating += new System.ComponentModel.CancelEventHandler(this.validate_pass);
