@@ -21,7 +21,7 @@ namespace DVLD.People
 
         private void Frm_person_info_Load(object sender, EventArgs e)
         {
-            cntrl_Show1.load(_id);
+            cntrl_Show1.fill_data_by_id(_id);
         }
 
 

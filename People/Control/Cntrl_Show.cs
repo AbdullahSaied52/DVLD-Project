@@ -34,7 +34,7 @@ namespace DVLD.People.Control
             }
         }
 
-        public void load(int id)
+        public void fill_data_by_id(int id)
         {
             comboBox1.Items.Clear();
             _fill_compobox();
