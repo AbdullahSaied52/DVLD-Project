@@ -43,5 +43,11 @@ namespace DVLD.Users
             _refesh();
 
         }
+
+        private void showPersonInformationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmShowUserInfo frm = new FrmShowUserInfo((int)dataGridView1.CurrentRow.Cells[4].Value);
+            frm.Show();
+        }
     }
 }
