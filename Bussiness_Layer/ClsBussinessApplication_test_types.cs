@@ -12,7 +12,7 @@ namespace Bussiness_Layer
     public class ClsBussinessApplication_test_types
     {
 
-        public static List<DTOApplication_types> list_all()
+        public static List<DTOApplication_types> list_all_applications()
         {
             return ClsDataApplication_Test_types.list_all_applications();
         }
@@ -21,7 +21,7 @@ namespace Bussiness_Layer
         {
             ClsDataApplication_Test_types.edit_application_type(app);
         }
-        public static DTOApplication_types get_by_id(int id)
+        public static DTOApplication_types get_application_by_id(int id)
         {
             return ClsDataApplication_Test_types.get_app_by_id(id);
         }
