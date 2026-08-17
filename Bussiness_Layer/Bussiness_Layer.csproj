@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="ClsBussinessApplication_test_types.cs" />
+    <Compile Include="ClsBussinessManageLocalLicenses.cs" />
     <Compile Include="ClsBussinessUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -51,9 +52,17 @@
       <Project>{90f3f181-d94f-4848-8f44-aa4f526ab306}</Project>
       <Name>Data_Layer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DTOApplication\DTOApplication.csproj">
+      <Project>{b6c23b93-d565-4a51-b8b4-34a6bdba415c}</Project>
+      <Name>DTOApplication</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DTOApplication_and_test_types\DTOApplication_types.csproj">
       <Project>{eaef4c9a-3238-4f01-9153-fa81720eaf50}</Project>
       <Name>DTOApplication_types</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTOLocalLicense_view\DTOLocalLicense_view.csproj">
+      <Project>{685a8475-e543-40a4-9a1c-b688f0946e39}</Project>
+      <Name>DTOLocalLicense_view</Name>
     </ProjectReference>
     <ProjectReference Include="..\DTOPeople\DTOPeople.csproj">
       <Project>{690d95df-a661-460b-b8b8-38c2898d7548}</Project>
