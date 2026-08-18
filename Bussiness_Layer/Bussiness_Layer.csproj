@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="ClsBussinessApplications.cs" />
     <Compile Include="ClsBussinessApplication_test_types.cs" />
     <Compile Include="ClsBussinessManageLocalLicenses.cs" />
     <Compile Include="ClsBussinessUser.cs" />
