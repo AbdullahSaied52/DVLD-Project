@@ -11,6 +11,22 @@ namespace DTOApplication_namespace
 {
     public class DTOApplication
     {
+        public enum enApplicationType
+        {
+            NewLocalDrivingLicense = 1,
+            RenewDrivingLicense = 2,
+            ReplaceLostDrivingLicense = 3,
+            ReplaceDamagedDrivingLicense = 4,
+            ReleaseDetainedDrivingLicsense = 5,
+            NewInternationalLicense = 6
+        }
+
+        public enum enApplicationStatus
+        {
+            New=1,
+            Cancel=2,
+            Completed=3
+        }
         public int app_id { get; set; }
         public int person_id { get; set; }
         public DTOPerson person { get; set; }
@@ -19,7 +35,7 @@ namespace DTOApplication_namespace
         public DTOApplication_types app_type { get; set; }
         public int app_status { get; set; }
         public DateTime last_status_date { get; set; }
-        public decimal fees { get; set; }
+        public decimal fees_for_app { get; set; }
         public int user_id { get; set; }
         public DTOUser userinfo { get; set; }
 
@@ -32,7 +48,7 @@ namespace DTOApplication_namespace
             this.app_type_id = apptypeid;
             this.app_status = appstatus;
             this.last_status_date = last_date;
-            this.fees = fees;
+            this.fees_for_app = fees;
             this.user_id = userid;
 
         }
@@ -45,7 +61,7 @@ namespace DTOApplication_namespace
             this.app_type_id = -1;
             this.app_status = 1;
             this.last_status_date = DateTime.Now;
-            this.fees = 0;
+            this.fees_for_app = 0;
             this.user_id = -1;
 
         }
