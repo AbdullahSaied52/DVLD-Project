@@ -27,5 +27,11 @@ namespace DVLD.Manage_Applications
         {
             _refresh();
         }
+
+        private void cancelApplicationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ClsBussinessApplications.cancel_application_by_app_id((int)dataGridView1.CurrentRow.Cells[0].Value);
+            _refresh();
+        }
     }
 }
