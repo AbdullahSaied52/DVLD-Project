@@ -1,5 +1,6 @@
 ﻿using Bussiness_Layer;
 using DTOUsers_namespace;
+using DVLD.Global_info;
 using DVLD.Users;
 using System;
 using System.Collections.Generic;
@@ -50,6 +51,7 @@ namespace DVLD.Login
                         if (checkBox1.Checked == true)
                         {
                             ClsSaveLastLogin.save_to_file(user.name, user.password);
+                            ClsGlobal.current_user = user;
                         }
                         else
                             ClsSaveLastLogin.save_to_file("", "");
