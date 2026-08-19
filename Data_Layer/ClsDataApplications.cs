@@ -75,23 +75,38 @@ namespace Data_Layer
         }
         public static void add_new_localdrivinglicense(int app_id,int license_id)
         {
-            using(SqlConnection cnct=new SqlConnection(connection_string))
+
+
+            using (SqlConnection cnct = new SqlConnection(connection_string))
             {
                 string query = @"insert into LocalDrivingLicenseApplications(ApplicationID,LicenseClassID)
-                                values (@app_id,@license_id) ";
-                using (SqlCommand cmd = new SqlCommand(query,cnct))
+                            values (@app_id,@license_id) ";
+                using (SqlCommand cmd = new SqlCommand(query, cnct))
                 {
                     cmd.Parameters.AddWithValue("@app_id", app_id);
                     cmd.Parameters.AddWithValue("@license_id", license_id);
                     cnct.Open();
                     cmd.ExecuteNonQuery();
                 }
-
             }
 
         }
 
+        //cancel app
 
+        public static void cancel_application_by_app_id(int app_id)
+        {
+            using (SqlConnection cnct = new SqlConnection(connection_string))
+            {
+                using (SqlCommand cmd = new SqlCommand("sp_cancel_locallicense_application", cnct))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@local_app_id", app_id);
+                    cnct.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
         
     }
 }
