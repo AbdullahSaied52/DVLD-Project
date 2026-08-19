@@ -41,7 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="ClsDataPerson.cs" />
+    <Compile Include="ClsDataApplications.cs" />
     <Compile Include="ClsDataApplication_Test_types.cs" />
     <Compile Include="ClsDataManageLocalLicenses.cs" />
     <Compile Include="ClsDataUser.cs" />
