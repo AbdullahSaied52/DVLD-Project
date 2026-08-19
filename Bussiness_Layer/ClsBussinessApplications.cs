@@ -12,8 +12,18 @@ namespace Bussiness_Layer
     {
         public static void add_new_app(DTOApplication app)
         {
+
             ClsDataApplications.add_new_application(app);
 
+        }
+        public static bool if_app_exist(DTOApplication app)
+        {
+            return ClsDataApplications.if_application_exist(app) > 0? true:false;
+        }
+        
+        public static void add_new_local_license(int app_id,int license_id)
+        {
+            ClsDataApplications.add_new_localdrivinglicense(app_id, license_id);
         }
     }
 }
