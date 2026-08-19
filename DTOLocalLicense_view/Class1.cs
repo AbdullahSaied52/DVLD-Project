@@ -8,7 +8,7 @@ namespace DTOLocalLicense_view_namespace
 {
     public class DTOLicense_view
     {
-        public int app_id { get; set; }
+        public int local_license_app_id { get; set; }
         public string class_name { get; set; }
 
         public string national_num { get; set; }
@@ -23,7 +23,7 @@ namespace DTOLocalLicense_view_namespace
         public DTOLicense_view(int id, string classname, string fullname, 
             string national_num, DateTime date, int passed, string status)
         {
-            this.app_id = id;
+            this.local_license_app_id = id;
             this.class_name = classname;
             this.fullname = fullname;
             this.national_num = national_num;
