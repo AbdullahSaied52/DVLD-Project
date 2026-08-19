@@ -31,9 +31,14 @@
             this.components = new System.ComponentModel.Container();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btncancel2 = new System.Windows.Forms.Button();
             this.btnsave = new System.Windows.Forms.Button();
+            this.lbluser = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.lbldate = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -42,13 +47,8 @@
             this.btncancel = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.lbldate = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lbluser = new System.Windows.Forms.Label();
             this.cntrl_Show1 = new DVLD.People.Control.Cntrl_Show();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -79,6 +79,14 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(599, 211);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(213, 21);
+            this.comboBox1.TabIndex = 4;
+            // 
             // btncancel2
             // 
             this.btncancel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -88,6 +96,7 @@
             this.btncancel2.TabIndex = 3;
             this.btncancel2.Text = "Cancel";
             this.btncancel2.UseVisualStyleBackColor = true;
+            this.btncancel2.Click += new System.EventHandler(this.btncancel2_Click);
             // 
             // btnsave
             // 
@@ -100,6 +109,35 @@
             this.btnsave.UseVisualStyleBackColor = true;
             this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
             // 
+            // lbluser
+            // 
+            this.lbluser.AutoSize = true;
+            this.lbluser.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbluser.Location = new System.Drawing.Point(594, 368);
+            this.lbluser.Name = "lbluser";
+            this.lbluser.Size = new System.Drawing.Size(0, 25);
+            this.lbluser.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(597, 292);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(48, 25);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "15$";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(150, 368);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(170, 25);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Created By User";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -109,6 +147,15 @@
             this.label4.Size = new System.Drawing.Size(172, 25);
             this.label4.TabIndex = 0;
             this.label4.Text = "Application Fees";
+            // 
+            // lbldate
+            // 
+            this.lbldate.AutoSize = true;
+            this.lbldate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldate.Location = new System.Drawing.Point(594, 118);
+            this.lbldate.Name = "lbldate";
+            this.lbldate.Size = new System.Drawing.Size(0, 25);
+            this.lbldate.TabIndex = 0;
             // 
             // label3
             // 
@@ -196,6 +243,13 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Search By National number";
             // 
+            // cntrl_Show1
+            // 
+            this.cntrl_Show1.Location = new System.Drawing.Point(6, 19);
+            this.cntrl_Show1.Name = "cntrl_Show1";
+            this.cntrl_Show1.Size = new System.Drawing.Size(918, 521);
+            this.cntrl_Show1.TabIndex = 4;
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -205,59 +259,6 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(956, 603);
             this.tabControl1.TabIndex = 2;
-            // 
-            // lbldate
-            // 
-            this.lbldate.AutoSize = true;
-            this.lbldate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbldate.Location = new System.Drawing.Point(594, 118);
-            this.lbldate.Name = "lbldate";
-            this.lbldate.Size = new System.Drawing.Size(0, 25);
-            this.lbldate.TabIndex = 0;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(599, 211);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 4;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(597, 292);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 25);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "15$";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(150, 368);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(170, 25);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Created By User";
-            // 
-            // lbluser
-            // 
-            this.lbluser.AutoSize = true;
-            this.lbluser.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbluser.Location = new System.Drawing.Point(594, 368);
-            this.lbluser.Name = "lbluser";
-            this.lbluser.Size = new System.Drawing.Size(0, 25);
-            this.lbluser.TabIndex = 0;
-            // 
-            // cntrl_Show1
-            // 
-            this.cntrl_Show1.Location = new System.Drawing.Point(6, 19);
-            this.cntrl_Show1.Name = "cntrl_Show1";
-            this.cntrl_Show1.Size = new System.Drawing.Size(918, 521);
-            this.cntrl_Show1.TabIndex = 4;
             // 
             // FrmAddLocalLicense
             // 

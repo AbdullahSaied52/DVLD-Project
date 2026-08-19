@@ -17,7 +17,7 @@ namespace DVLD.Manage_Applications
     
     public partial class FrmAddLocalLicense : Form
     {
-        DTOPerson p;
+        DTOPerson person;
         DTOApplication app;
         public FrmAddLocalLicense()
         {
@@ -38,11 +38,11 @@ namespace DVLD.Manage_Applications
 
         private void btnsearch_Click(object sender, EventArgs e)
         {
-            p = ClsBussinessperson.get_person_by_national_num(textBox1.Text);
-            if (p != null)
+            person = ClsBussinessperson.get_person_by_national_num(textBox1.Text);
+            if (person != null)
             {
                 btnnext.Enabled = true;
-                cntrl_Show1.fill_data_by_id(p.PersonID);
+                cntrl_Show1.fill_data_by_id(person.PersonID);
             }
         }
 
@@ -53,7 +53,7 @@ namespace DVLD.Manage_Applications
 
         private void btnnext_Click(object sender, EventArgs e)
         {
-            if (p != null)
+            if (person != null)
                 tabControl1.SelectedTab = tabControl1.TabPages["tabPage2"];
             else
                 MessageBox.Show("not exist");
@@ -63,14 +63,29 @@ namespace DVLD.Manage_Applications
         private void btnsave_Click(object sender, EventArgs e)
         {
             app = new DTOApplication();
-            app.app_status = 1;
+            app.person_id = person.PersonID;
+            app.user_id = ClsGlobal.current_user.id;
+            app.app_status =(int) DTOApplication.enApplicationStatus.New;
             app.date = DateTime.Now;
-            app.app_type_id = 1;                // as he want to add new local license
+            app.app_type_id = (int) DTOApplication.enApplicationType.NewLocalDrivingLicense;                // as he want to add new local license
             app.last_status_date = DateTime.Now;
-            app.fees = ClsBussinessManageLocalLicenses.license_fees_by_id(comboBox1.SelectedIndex + 1);
+            app.fees_for_app = 15; // as it new local license
+            if (ClsBussinessApplications.if_app_exist(app))
+            {
+                MessageBox.Show("this application is exists");
+            }
+            else
 
-            ClsBussinessApplications.add_new_app(app);
-            MessageBox.Show("Added");
+            {
+                ClsBussinessApplications.add_new_app(app);
+                ClsBussinessApplications.add_new_local_license(app.app_id, comboBox1.SelectedIndex + 1);
+                MessageBox.Show("Added");
+            }
+        }
+
+        private void btncancel2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
