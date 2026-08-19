@@ -1,5 +1,6 @@
 ﻿using DVLD.Login;
 using DVLD.Manage_Application_Types;
+using DVLD.Manage_Applications;
 using DVLD.Manage_Test_Types;
 using DVLD.People;
 using DVLD.Users;
@@ -46,6 +47,23 @@ namespace DVLD
         {
             FrmListTestTypes frm = new FrmListTestTypes();
             frm.Show();
+        }
+
+        private void manageApplicationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void localDrivingLicenceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmListLocalLicenses frm = new FrmListLocalLicenses();
+            frm.Show();
+        }
+
+        private void localLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAddLocalLicense frm = new FrmAddLocalLicense();
+            frm.ShowDialog();
         }
     }
 }
