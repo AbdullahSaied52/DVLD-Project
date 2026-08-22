@@ -45,7 +45,9 @@
     <Compile Include="ClsBussinessApplications.cs" />
     <Compile Include="ClsBussinessApplication_test_types.cs" />
     <Compile Include="ClsBussinessManageLocalLicenses.cs" />
+    <Compile Include="ClsBussinessTestAppointment.cs" />
     <Compile Include="ClsBussinessUser.cs" />
+    <Compile Include="ClsBussinessLocalDrivingLicense.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

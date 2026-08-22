@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Applications\Manage Applications\Tests\Comtrol\CtrlApplicationInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Applications\Manage Applications\Tests\Comtrol\CtrlApplicationInfo.Designer.cs">
+      <DependentUpon>CtrlApplicationInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\Manage Applications\Tests\FrmVisionTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\Manage Applications\Tests\FrmVisionTest.Designer.cs">
+      <DependentUpon>FrmVisionTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +158,12 @@
     <Compile Include="Users\FrmShowUserInfo.Designer.cs">
       <DependentUpon>FrmShowUserInfo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Applications\Manage Applications\Tests\Comtrol\CtrlApplicationInfo.resx">
+      <DependentUpon>CtrlApplicationInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\Manage Applications\Tests\FrmVisionTest.resx">
+      <DependentUpon>FrmVisionTest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>

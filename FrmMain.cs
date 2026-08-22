@@ -65,5 +65,10 @@ namespace DVLD
             FrmAddLocalLicense frm = new FrmAddLocalLicense();
             frm.ShowDialog();
         }
+
+        private void applicationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
