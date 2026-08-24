@@ -84,8 +84,6 @@ namespace Bussiness_Layer
             return ClsDataApplications.if_application_exist(person_id, app_type_id, license_class_id) > 0 ? true : false;
         }
 
-
-
         public static void cancel_application_by_app_id(int app_id)
         {
             ClsDataApplications.cancel_application_by_app_id(app_id);
