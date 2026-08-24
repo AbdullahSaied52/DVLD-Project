@@ -36,13 +36,13 @@ namespace Bussiness_Layer
         public DateTime date { get; set; }
         public int app_type_id { get; set; }
         public DTOApplication_types app_type { get; set; }
-        public int app_status { get; set; }
+        public byte app_status { get; set; }
         public DateTime last_status_date { get; set; }
         public float fees_for_app { get; set; }
         public int user_id { get; set; }
         public DTOUser userinfo { get; set; }
 
-        public ClsBussinessApplications(int app_id, int personid, DateTime date, DateTime last_date, int apptypeid, int appstatus, float fees
+        public ClsBussinessApplications(int app_id, int personid, DateTime date, DateTime last_date, int apptypeid, byte appstatus, float fees
             , int userid)
         {
             this.app_id = app_id;
@@ -53,6 +53,9 @@ namespace Bussiness_Layer
             this.last_status_date = last_date;
             this.fees_for_app = fees;
             this.user_id = userid;
+            this.person = ClsBussinessperson.get_person_by_id(personid);
+            this.userinfo = ClsBussinessUser.get_user_ByID(userid);
+            this.app_type = ClsBussinessApplication_test_types.get_application_by_id(apptypeid);
 
         }
 
@@ -81,14 +84,47 @@ namespace Bussiness_Layer
             return ClsDataApplications.if_application_exist(person_id, app_type_id, license_class_id) > 0 ? true : false;
         }
 
-        //public  void add_new_local_license(int app_id,int license_id)
-        //{
-        //     ClsDataApplications.add_new_localdrivinglicense(app_id, license_id);
-        //}
 
-        //public  void cancel_application_by_app_id(int app_id)
-        //{
-        //    ClsDataApplications.cancel_application_by_app_id(app_id);
-        //}
+
+        public static void cancel_application_by_app_id(int app_id)
+        {
+            ClsDataApplications.cancel_application_by_app_id(app_id);
+        }
+
+        public static void delete_applications(int app_id)
+        {
+            ClsDataApplications.delete_application_by_id(app_id);
+        }
+
+        public static ClsBussinessApplications find_app_by_id(int id)
+        {
+            int person_id = -1;
+            DateTime date = DateTime.Now;
+            int app_type_id = -1;
+            byte app_status = 1;
+            DateTime last_status_date = DateTime.Now;
+            float fees_for_app = 0;
+            int user_id = -1;
+
+            bool found = ClsDataApplications.find_app_by_id(id,ref person_id,ref date,ref app_type_id,ref app_status,
+                ref last_status_date,ref fees_for_app,ref user_id);
+            if (found)
+                return new ClsBussinessApplications(id, person_id, date, last_status_date, app_type_id, app_status, fees_for_app, user_id);
+            else
+                return null;
+        }
+
+        public void update_application()
+        {
+            ClsDataApplications.Update_application(
+        this.app_id,
+        this.person_id,
+        this.date,
+        this.app_type_id,
+        this.app_status,
+        this.last_status_date,
+        this.fees_for_app,
+        this.user_id);
+        }
     }
 }

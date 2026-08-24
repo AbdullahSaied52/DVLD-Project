@@ -19,7 +19,7 @@ namespace Bussiness_Layer
         }
 
         public ClsBussinessLocalDrivingLicense(int local_license_id,int license_calss_id, 
-            int app_id, int personid, DateTime date, DateTime last_date, int apptypeid, int appstatus, float fees
+            int app_id, int personid, DateTime date, DateTime last_date, int apptypeid, byte appstatus, float fees
             , int userid)
         {
             this.local_license_id = local_license_id;
@@ -32,12 +32,39 @@ namespace Bussiness_Layer
             this.last_status_date = last_date;
             this.fees_for_app = fees;
             this.user_id = userid;
+            this.person = ClsBussinessperson.get_person_by_id(personid);
+            this.userinfo = ClsBussinessUser.get_user_ByID(userid);
+            this.app_type = ClsBussinessApplication_test_types.get_application_by_id(apptypeid);
         }
 
         public void add_new_local_license()
         {
             base.add_new_app();
             ClsDataLocalLicenses.add_new_local_license(this.app_id, this.license_class_id);
+        }
+
+        public static void delete_local_license(int local_license_id)
+        {
+            ClsDataLocalLicenses.delete_local_license(local_license_id);
+        }
+
+        public static ClsBussinessLocalDrivingLicense find_local_license_by_id(int id)
+        {
+            int app_id = -1; int license_class_id = -1;
+            if (ClsDataLocalLicenses.find_local_license_by_local_id(id, ref app_id, ref license_class_id))
+            {
+                ClsBussinessApplications app = ClsBussinessApplications.find_app_by_id(app_id);
+
+                return new ClsBussinessLocalDrivingLicense(id, license_class_id, app_id, app.person_id, app.date, app.last_status_date, app.app_type_id,
+                    app.app_status, app.fees_for_app, app.user_id);
+            }
+            else return null;
+        }
+
+        public void update_local_license()
+        {
+            base.update_application();
+            ClsDataLocalLicenses.update_local_license(this.local_license_id, this.license_class_id);
         }
 
     }
