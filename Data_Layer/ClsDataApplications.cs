@@ -77,19 +77,100 @@ namespace Data_Layer
 
         ////cancel app
 
-        //public static void cancel_application_by_app_id(int app_id)
-        //{
-        //    using (SqlConnection cnct = new SqlConnection(connection_string))
-        //    {
-        //        using (SqlCommand cmd = new SqlCommand("sp_cancel_locallicense_application", cnct))
-        //        {
-        //            cmd.CommandType = CommandType.StoredProcedure;
-        //            cmd.Parameters.AddWithValue("@local_app_id", app_id);
-        //            cnct.Open();
-        //            cmd.ExecuteNonQuery();
-        //        }
-        //    }
-        //}
+        public static void cancel_application_by_app_id(int app_id)
+        {
+            using (SqlConnection cnct = new SqlConnection(connection_string))
+            {
+                using (SqlCommand cmd = new SqlCommand("sp_cancel_locallicense_application", cnct))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@local_app_id", app_id);
+                    cnct.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public static void delete_application_by_id(int app_id)
+        {
+            using (SqlConnection cnct = new SqlConnection(connection_string))
+            {
+                string query = @"delete from Applications
+                                where ApplicationID=@id";
+                using (SqlCommand cmd = new SqlCommand(query, cnct))
+                {
+                    cmd.Parameters.AddWithValue("@id", app_id);
+                    cnct.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public static bool find_app_by_id(int app_id,ref int person_id,ref DateTime app_date,
+            ref int app_type_id, ref byte app_status,ref DateTime last_date,ref float fees,ref int user_id)
+        {
+            using (SqlConnection cnct = new SqlConnection(connection_string))
+            {
+                string query = @"select * from Applications
+                                where ApplicationID=@id";
+                using (SqlCommand cmd = new SqlCommand(query, cnct))
+                {
+                    cmd.Parameters.AddWithValue("@id", app_id);
+                    cnct.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            person_id = (int)reader["ApplicantPersonID"];
+                            app_date = (DateTime)reader["ApplicationDate"];
+                            app_type_id = (int)reader["ApplicationTypeID"];
+                            app_status = Convert.ToByte(reader["ApplicationStatus"]);
+                            last_date = (DateTime)reader["LastStatusDate"];
+                            fees = Convert.ToSingle(reader["PaidFees"]);
+                            user_id = (int)reader["CreatedByUserID"];
+                            return true;
+                        }
+                        else return false;
+
+                    }
+                }
+            }
+
+        }
+
+        public static void Update_application(int app_id, int person_id, DateTime app_date,
+    int app_type_id, byte app_status, DateTime last_date, float fees, int user_id)
+        {
+            using (SqlConnection cnct = new SqlConnection(connection_string))
+            {
+                string query = @"UPDATE Applications
+                        SET ApplicantPersonID = @person_id,
+                            ApplicationDate = @app_date,
+                            ApplicationTypeID = @app_type_id,
+                            ApplicationStatus = @app_status,
+                            LastStatusDate = @last_date,
+                            PaidFees = @fees,
+                            CreatedByUserID = @user_id
+                        WHERE ApplicationID = @app_id";
+
+                using (SqlCommand cmd = new SqlCommand(query, cnct))
+                {
+                    cmd.Parameters.AddWithValue("@app_id", app_id);
+                    cmd.Parameters.AddWithValue("@person_id", person_id);
+                    cmd.Parameters.AddWithValue("@app_date", app_date);
+                    cmd.Parameters.AddWithValue("@app_type_id", app_type_id);
+                    cmd.Parameters.AddWithValue("@app_status", app_status);
+                    cmd.Parameters.AddWithValue("@last_date", last_date);
+                    cmd.Parameters.AddWithValue("@fees", fees);
+                    cmd.Parameters.AddWithValue("@user_id", user_id);
+
+                    cnct.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+        }
+
 
     }
 }
