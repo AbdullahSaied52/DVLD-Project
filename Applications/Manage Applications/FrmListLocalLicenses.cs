@@ -1,5 +1,6 @@
 ﻿using Bussiness_Layer;
 using DVLD.Applications.Manage_Applications;
+using DVLD.Applications.Manage_Applications.Tests;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -64,6 +65,12 @@ namespace DVLD.Manage_Applications
             FrmAddLocalLicense frm = new FrmAddLocalLicense((int)dataGridView1.CurrentRow.Cells[0].Value);
             frm.ShowDialog();
             _refresh();
+        }
+
+        private void visionTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmVisionTest frm = new FrmVisionTest((int)dataGridView1.CurrentRow.Cells[0].Value);
+            frm.ShowDialog();
         }
     }
 }

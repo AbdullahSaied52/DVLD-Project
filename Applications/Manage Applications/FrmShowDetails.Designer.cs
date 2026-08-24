@@ -49,6 +49,7 @@
             this.ctrlApplicationInfo1.Name = "ctrlApplicationInfo1";
             this.ctrlApplicationInfo1.Size = new System.Drawing.Size(958, 542);
             this.ctrlApplicationInfo1.TabIndex = 0;
+            this.ctrlApplicationInfo1.Load += new System.EventHandler(this.ctrlApplicationInfo1_Load);
             // 
             // FrmShowDetails
             // 

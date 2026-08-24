@@ -28,5 +28,10 @@ namespace DVLD.Applications.Manage_Applications
         {
             ctrlApplicationInfo1.load_data(_local_license_id);
         }
+
+        private void ctrlApplicationInfo1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
