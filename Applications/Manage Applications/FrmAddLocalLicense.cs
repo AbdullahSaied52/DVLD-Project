@@ -18,13 +18,35 @@ namespace DVLD.Manage_Applications
     public partial class FrmAddLocalLicense : Form
     {
         DTOPerson person;
-        DTOApplication app;
-        public FrmAddLocalLicense()
+        ClsBussinessLocalDrivingLicense app = new ClsBussinessLocalDrivingLicense();
+        int _id;
+        public FrmAddLocalLicense(int local_license_id)
         {
+            _id = local_license_id;
             InitializeComponent();
         }
 
         private void FrmAddLocalLicense_Load(object sender, EventArgs e)
+        {
+            if(_id==-1)
+            {
+                load();
+            }
+            else
+            {
+                update();
+            }
+
+        }
+        private void update()
+        {
+            tabControl1.SelectedTab = tabControl1.TabPages["tabPage2"];
+            load();
+            app = ClsBussinessLocalDrivingLicense.find_local_license_by_id(_id);
+
+        }
+
+        private void load()
         {
             btnnext.Enabled = false;
             lbldate.Text = DateTime.Now.ToString();
@@ -62,25 +84,37 @@ namespace DVLD.Manage_Applications
 
         private void btnsave_Click(object sender, EventArgs e)
         {
-            app = new DTOApplication();
-            app.person_id = person.PersonID;
-            app.user_id = ClsGlobal.current_user.id;
-            app.app_status =(int) DTOApplication.enApplicationStatus.New;
-            app.date = DateTime.Now;
-            app.app_type_id = (int) DTOApplication.enApplicationType.NewLocalDrivingLicense;                // as he want to add new local license
-            app.last_status_date = DateTime.Now;
-            app.fees_for_app = 15; // as it new local license
-            if (ClsBussinessApplications.if_app_exist(app))
+
+
+
+            if (_id == -1)
             {
-                MessageBox.Show("this application is exists");
+                app.person_id = person.PersonID;
+                app.user_id = ClsGlobal.current_user.id;
+                app.app_status = (int)DTOApplication.enApplicationStatus.New;
+                app.date = DateTime.Now;
+                app.app_type_id = (int)DTOApplication.enApplicationType.NewLocalDrivingLicense;
+                app.last_status_date = DateTime.Now;
+                app.fees_for_app = 15;
+                app.license_class_id = comboBox1.SelectedIndex + 1;
+                if (app.if_app_exist(app.person_id, app.app_type_id, app.license_class_id))
+                {
+                    MessageBox.Show("this application is exists");
+                }
+                else
+                {
+                    app.add_new_local_license();
+                    MessageBox.Show("Added");
+                }
             }
             else
-
             {
-                ClsBussinessApplications.add_new_app(app);
-                ClsBussinessApplications.add_new_local_license(app.app_id, comboBox1.SelectedIndex + 1);
-                MessageBox.Show("Added");
+                app.license_class_id = comboBox1.SelectedIndex + 1;
+                app.update_local_license();
+                MessageBox.Show("Saved");
+
             }
+
         }
 
         private void btncancel2_Click(object sender, EventArgs e)
