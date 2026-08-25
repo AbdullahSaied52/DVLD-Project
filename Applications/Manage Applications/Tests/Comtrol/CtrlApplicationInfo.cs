@@ -31,6 +31,8 @@ namespace DVLD.Applications.Manage_Applications.Tests.Comtrol
             lblcreatedby.Text = app.userinfo.name;
             lbldate.Text = app.date.ToString();
             lblfees.Text = app.fees_for_app.ToString();
+            lbllicense.Text= app.liecense_info.license_name;
+
             switch (app.app_status)
             {
                 case 1:
