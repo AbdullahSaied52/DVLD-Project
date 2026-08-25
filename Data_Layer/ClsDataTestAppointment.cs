@@ -83,6 +83,7 @@ namespace Data_Layer
                 {
                     cnct.Open();
                     cmd.Parameters.AddWithValue("@id", test_type_id);
+                    cmd.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", local_license);
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         if (reader.Read())
@@ -110,7 +111,7 @@ namespace Data_Layer
             }
         }
 
-        public static void add_test_appointment(int appointment_id, int test_type_id,  int local_license,
+        public static int add_test_appointment(int appointment_id, int test_type_id,  int local_license,
              DateTime date,  float fees,  int user_id,  int locked,  int retake_id)
         {
             using(SqlConnection cnct=new SqlConnection(connection_string))
@@ -153,6 +154,45 @@ namespace Data_Layer
                     cnct.Open();
 
                     object result = cmd.ExecuteScalar();
+                    return (int)result;
+                }
+            }
+        }
+
+        public static void update_test_appointment(int appointment_id, int test_type_id, int local_license,
+             DateTime date, float fees, int user_id, int locked, int retake_id)
+        {
+            using (SqlConnection cnct = new SqlConnection(connection_string))
+            {
+                string query = @"update TestAppointments
+                                    set
+                                        TestTypeID= @TestTypeID,
+                                        LocalDrivingLicenseApplicationID=@LocalDrivingLicenseApplicationID,
+                                        AppointmentDate=@AppointmentDate,
+                                        PaidFees=@PaidFees,
+                                        CreatedByUserID=@CreatedByUserID,
+                                        IsLocked=@IsLocked,
+                                        RetakeTestApplicationID=@RetakeTestApplicationID
+                                        where TestAppointmentID=@id
+                                     ";
+                using (SqlCommand cmd = new SqlCommand(query, cnct))
+                {
+                    cmd.Parameters.AddWithValue("@id", appointment_id);
+                    cmd.Parameters.AddWithValue("@TestTypeID", test_type_id);
+                    cmd.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", local_license);
+                    cmd.Parameters.AddWithValue("@AppointmentDate", date);
+                    cmd.Parameters.AddWithValue("@PaidFees", fees);
+                    cmd.Parameters.AddWithValue("@CreatedByUserID", user_id);
+                    cmd.Parameters.AddWithValue("@IsLocked", locked);
+
+                    if (retake_id != -1)
+                        cmd.Parameters.AddWithValue("@RetakeTestApplicationID", retake_id);
+                    else
+                        cmd.Parameters.AddWithValue("@RetakeTestApplicationID", DBNull.Value);
+
+                    cnct.Open();
+
+                    cmd.ExecuteNonQuery();
                 }
             }
         }

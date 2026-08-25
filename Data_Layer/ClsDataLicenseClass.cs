@@ -16,10 +16,12 @@ namespace Data_Layer
         {
             using(SqlConnection cnct=new SqlConnection(connection_string))
             {
-                string query = @"select * from LicenseClasses";
+                string query = @"select * from LicenseClasses
+                                    where LicenseClassID=@id";
                 using(SqlCommand cmd=new SqlCommand(query,cnct))
                 {
                     cnct.Open();
+                    cmd.Parameters.AddWithValue("@id", id);
                     using(SqlDataReader reader=cmd.ExecuteReader())
                     {
                         if (reader.Read())
@@ -37,5 +39,7 @@ namespace Data_Layer
                 }
             }
         }
+
+
     }
 }

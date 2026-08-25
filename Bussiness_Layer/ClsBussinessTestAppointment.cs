@@ -66,7 +66,7 @@ namespace Bussiness_Layer
                 ref date, ref fees, ref createby_user_id, ref locked, ref retake_id);
             if (found)
             {
-                return new ClsBussinessTestAppointment(test_id, test_type_id, local_license_id, date, fees, createby_user_id, locked, retake_id)
+                return new ClsBussinessTestAppointment(test_id, test_type_id, local_license_id, date, fees, createby_user_id, locked, retake_id);
             }
             else return null;
             
@@ -85,7 +85,7 @@ namespace Bussiness_Layer
 
             if (found)
             {
-                return new ClsBussinessTestAppointment(test_id, test_type_id, local_license_id, date, fees, createby_user_id, locked, retake_id)
+                return new ClsBussinessTestAppointment(test_id, test_type_id, local_license_id, date, fees, createby_user_id, locked, retake_id);
             }
             else return null;
         }
@@ -93,6 +93,39 @@ namespace Bussiness_Layer
         public static DataTable get_test_by_id_per_type(int local_license_id,int type)
         {
             return ClsDataTestAppointment.get_test_appointment_by_id_per_test_type(local_license_id, type);
+        }
+
+        public static int add_test_appointment()
+        {
+            int test_id = -1;
+            int test_type_id = -1;
+            DateTime date = DateTime.Now;
+            float fees = 0;
+            int createby_user_id = -1;
+            int local_license_id = -1;
+            int locked = 0;
+            int retake_test_id = -1;
+
+            return ClsDataTestAppointment.add_test_appointment(test_id,
+                                            test_type_id,
+                                            local_license_id,
+                                            date,
+                                            fees,
+                                            createby_user_id,
+                                            locked,
+                                            retake_test_id);
+        }
+
+        public void update_test_appointment()
+        {
+            ClsDataTestAppointment.update_test_appointment(this.test_id,
+        this.test_type_id,
+        this.local_license_id,
+        this.date,
+        this.fees,
+        this.createby_user_id,
+        this.locked,
+        this.retake_test_id);
         }
     }
 }
