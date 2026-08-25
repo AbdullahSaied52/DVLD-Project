@@ -32,8 +32,27 @@ namespace DVLD.Applications.Manage_Applications.Tests
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FrmSchedualeVisionTest frm = new FrmSchedualeVisionTest(_id);
-            frm.ShowDialog();
+            ClsBussinessTestAppointment appointment = ClsBussinessTestAppointment.get_last_appointment(_id, 1);
+            if( appointment==null)
+            {
+                FrmSchedualeVisionTest frm = new FrmSchedualeVisionTest(_id);
+                frm.ShowDialog();
+            }
+            else
+            {
+                if(appointment.locked==0)
+                    MessageBox.Show("this person has an active test");
+                else
+                {
+                    FrmSchedualeVisionTest frm = new FrmSchedualeVisionTest(_id);
+                    frm.ShowDialog();
+                }
+            }
+        }
+
+        private void ctrlApplicationInfo1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -38,10 +38,15 @@ namespace DVLD.Applications.Manage_Applications.Tests
         private void FrmSchedualeVisionTest_Load(object sender, EventArgs e)
         {
             ClsBussinessLocalDrivingLicense app = ClsBussinessLocalDrivingLicense.find_local_license_by_id(_id);
+            
             lblfees.Text = app.fees_for_app.ToString();
             lbllicenseclass.Text = app.liecense_info.license_name;
             lblname.Text = app.person.FirstName + " " + app.person.SecondName;
-            
+            lbllicenseclass.Text = app.liecense_info.license_name;
+            lbltrial.Text = "not handled yet";
+            lblretakefees.Text = "not handled yet";
+            lbltotalfees.Text = "not handled yet";
+
         }
     }
 }
