@@ -35,7 +35,7 @@ namespace DVLD.Applications.Manage_Applications.Tests
             ClsBussinessTestAppointment appointment = ClsBussinessTestAppointment.get_last_appointment(_id, 1);
             if( appointment==null)
             {
-                FrmSchedualeVisionTest frm = new FrmSchedualeVisionTest(_id);
+                FrmSchedualeVisionTest frm = new FrmSchedualeVisionTest(_id,1);// 1 for vision test
                 frm.ShowDialog();
             }
             else
@@ -44,10 +44,11 @@ namespace DVLD.Applications.Manage_Applications.Tests
                     MessageBox.Show("this person has an active test");
                 else
                 {
-                    FrmSchedualeVisionTest frm = new FrmSchedualeVisionTest(_id);
+                    FrmSchedualeVisionTest frm = new FrmSchedualeVisionTest(_id,1);
                     frm.ShowDialog();
                 }
             }
+            _refresh();
         }
 
         private void ctrlApplicationInfo1_Load(object sender, EventArgs e)

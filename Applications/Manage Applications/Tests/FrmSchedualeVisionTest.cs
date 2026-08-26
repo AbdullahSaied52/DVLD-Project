@@ -13,10 +13,14 @@ namespace DVLD.Applications.Manage_Applications.Tests
 {
     public partial class FrmSchedualeVisionTest : Form
     {
-        int _id;
-        public FrmSchedualeVisionTest(int id)
+        int _local_license_id;
+        int _test_type_id;
+        ClsBussinessLocalDrivingLicense app;
+        ClsBussinessTestAppointment test;
+        public FrmSchedualeVisionTest(int id,int testtype_id)
         {
-            _id = id;
+            _local_license_id = id;
+            _test_type_id = testtype_id;
             InitializeComponent();
         }
 
@@ -29,15 +33,46 @@ namespace DVLD.Applications.Manage_Applications.Tests
         {
             this.Close();
         }
+        private float test_fees()
+        {
+            if (_test_type_id == 1)
+            {
+                lbltitle.Text = "Vision Test Appointment";
+                lblfees.Text = "10";
+                return 10;
 
+            }
+            else if (_test_type_id == 2)
+            {
+                lbltitle.Text = "Written Test Appointment";
+                lblfees.Text = "20";
+                return 20;
+            }
+            else
+            {
+                lbltitle.Text = "Speed Test Appointment";
+                lblfees.Text = "35";
+                return 35;
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-
+            test = new ClsBussinessTestAppointment();
+            dateTimePicker1.MinDate = DateTime.Now;
+            app.date = dateTimePicker1.Value;
+            test.date = app.date;
+            test.local_license_id = app.local_license_id;
+            test.fees = test_fees();
+            test.locked = 0;
+            test.createby_user_id = app.user_id;
+            test.test_type_id = _test_type_id;
+            test.add_test_appointment();
+            MessageBox.Show("Added");
         }
 
         private void FrmSchedualeVisionTest_Load(object sender, EventArgs e)
         {
-            ClsBussinessLocalDrivingLicense app = ClsBussinessLocalDrivingLicense.find_local_license_by_id(_id);
+            app = ClsBussinessLocalDrivingLicense.find_local_license_by_id(_local_license_id);
             
             lblfees.Text = app.fees_for_app.ToString();
             lbllicenseclass.Text = app.liecense_info.license_name;

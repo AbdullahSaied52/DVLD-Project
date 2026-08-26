@@ -44,6 +44,7 @@
             this.lbltotalfees = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.lbltitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -129,9 +130,8 @@
             this.lblfees.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblfees.Location = new System.Drawing.Point(280, 372);
             this.lblfees.Name = "lblfees";
-            this.lblfees.Size = new System.Drawing.Size(36, 25);
+            this.lblfees.Size = new System.Drawing.Size(0, 25);
             this.lblfees.TabIndex = 0;
-            this.lblfees.Text = "10";
             // 
             // dateTimePicker1
             // 
@@ -201,6 +201,15 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // lbltitle
+            // 
+            this.lbltitle.AutoSize = true;
+            this.lbltitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltitle.Location = new System.Drawing.Point(194, 31);
+            this.lbltitle.Name = "lbltitle";
+            this.lbltitle.Size = new System.Drawing.Size(0, 25);
+            this.lbltitle.TabIndex = 0;
+            // 
             // FrmSchedualeVisionTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -221,6 +230,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbllicenseclass);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbltitle);
             this.Controls.Add(this.label1);
             this.Name = "FrmSchedualeVisionTest";
             this.Text = "FrmSchedualeVisionTest";
@@ -248,5 +258,6 @@
         private System.Windows.Forms.Label lbltotalfees;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label lbltitle;
     }
 }

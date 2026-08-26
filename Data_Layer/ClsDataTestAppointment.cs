@@ -93,7 +93,16 @@ namespace Data_Layer
                             date = (DateTime)reader["AppointmentDate"];
                             fees = Convert.ToSingle(reader["PaidFees"]);
                             user_id = (int)reader["CreatedByUserID"];
-                            locked = (int)reader["IsLocked"];
+                            //locked = (int)reader["IsLocked"];
+                            if (reader["IsLocked"] != DBNull.Value)
+                            {
+                                locked = Convert.ToInt32( reader["IsLocked"]);
+                            }
+                            else
+                            {
+                                locked = 0;
+                            }
+
                             if (reader["RetakeTestApplicationID"] != DBNull.Value)
                             {
                                 retake_id = (int)reader["RetakeTestApplicationID"];
@@ -154,7 +163,7 @@ namespace Data_Layer
                     cnct.Open();
 
                     object result = cmd.ExecuteScalar();
-                    return (int)result;
+                    return Convert.ToInt32( result);
                 }
             }
         }
