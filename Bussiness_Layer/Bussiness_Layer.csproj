@@ -47,6 +47,7 @@
     <Compile Include="ClsBussinessLicenseClass.cs" />
     <Compile Include="ClsBussinessManageLocalLicenses.cs" />
     <Compile Include="ClsBussinessTestAppointment.cs" />
+    <Compile Include="ClsBussinessTests.cs" />
     <Compile Include="ClsBussinessUser.cs" />
     <Compile Include="ClsBussinessLocalDrivingLicense.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
