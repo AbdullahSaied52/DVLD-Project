@@ -52,7 +52,7 @@ namespace Data_Layer
                             date = (DateTime)reader["AppointmentDate"];
                             fees = Convert.ToSingle(reader["PaidFees"]);
                             user_id = (int)reader["CreatedByUserID"];
-                            locked = (int)reader["IsLocked"];
+                            locked = Convert.ToInt32( reader["IsLocked"]);
                             if (reader["RetakeTestApplicationID"] != DBNull.Value)
                             {
                                 retake_id = (int)reader["RetakeTestApplicationID"];

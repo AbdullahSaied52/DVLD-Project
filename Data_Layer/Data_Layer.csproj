@@ -48,6 +48,7 @@
     <Compile Include="ClsDataApplication_Test_types.cs" />
     <Compile Include="ClsDataManageLocalLicenses.cs" />
     <Compile Include="ClsDataTestAppointment.cs" />
+    <Compile Include="ClsDataTests.cs" />
     <Compile Include="ClsDataUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
