@@ -20,12 +20,14 @@ namespace DVLD.Applications.Manage_Applications.Tests
 
         int _local_license_id;
         ClsBussinessLocalDrivingLicense app;
-        ClsBussinessTestAppointment test;
-        int test_appointment_id;
-        public FrmSchedualeVisionTest(int local_license_id,int appointment_id=-1)
+        ClsBussinessTestAppointment appointment;
+        int _test_appointment_id;
+        int _is_retake_test;
+        public FrmSchedualeVisionTest(int local_license_id,int appointment_id=-1,int retake=-1)
         {
             _local_license_id = local_license_id;
-            test_appointment_id = appointment_id;
+            _test_appointment_id = appointment_id;
+            _is_retake_test = retake;
             InitializeComponent();
         }
 
@@ -63,24 +65,36 @@ namespace DVLD.Applications.Manage_Applications.Tests
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            test = new ClsBussinessTestAppointment();
+            appointment = new ClsBussinessTestAppointment();
             app.date = dateTimePicker1.Value;
-            test.date = dateTimePicker1.Value;
-            test.local_license_id = app.local_license_id;
-            test.fees = test_fees();
-            test.locked = 0;
-            test.createby_user_id = app.user_id;
-            test.test_type_id = test_type_id;
-            if (test_appointment_id == -1)
+            appointment.date = dateTimePicker1.Value;
+            appointment.local_license_id = app.local_license_id;
+            appointment.fees = test_fees();
+            appointment.locked = 0;
+            appointment.createby_user_id = app.user_id;
+            appointment.test_type_id = test_type_id;
+
+
+
+            if (_test_appointment_id == -1)
             {
-                test.add_test_appointment();
+                appointment.add_test_appointment();
                 MessageBox.Show("Added");
             }
             else
             {
-                test.test_id = test_appointment_id;
-                test.update_test_appointment();
-                MessageBox.Show("updated");
+                if (_is_retake_test != -1)
+                {
+                    appointment.retake_test_id = _test_appointment_id;
+                    appointment.add_test_appointment();
+                    MessageBox.Show("Add a retake test");
+                }
+                else
+                {
+                    appointment.test_id = _test_appointment_id;
+                    appointment.update_test_appointment();
+                    MessageBox.Show("updated");
+                }
             }
         }
         private void _refresh()

@@ -14,6 +14,7 @@ namespace DVLD.Applications.Manage_Applications.Tests
     public partial class FrmVisionTest : Form
     {
         int _local_license_id;
+        ClsBussinessTestAppointment appointment;
         public FrmVisionTest(int local_id)
         {
             InitializeComponent();
@@ -32,7 +33,7 @@ namespace DVLD.Applications.Manage_Applications.Tests
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ClsBussinessTestAppointment appointment = ClsBussinessTestAppointment.get_last_appointment(_local_license_id, 1);
+            appointment = ClsBussinessTestAppointment.get_last_appointment(_local_license_id, 1);
             if( appointment==null)
             {
                 FrmSchedualeVisionTest frm = new FrmSchedualeVisionTest(_local_license_id);// 1 for vision test
@@ -48,14 +49,14 @@ namespace DVLD.Applications.Manage_Applications.Tests
                 }
                 else
                 {
-                    if (ClsBussinessTests.is_passed((int)dataGridView1.CurrentRow.Cells[0].Value))
+                    if (ClsBussinessTests.is_passed(appointment.test_id))
                     {
                         MessageBox.Show("this person passed the test");
                     }
                     else
                     {
                         // configure the form for retake test
-                        FrmSchedualeVisionTest frm = new FrmSchedualeVisionTest(_local_license_id);
+                        FrmSchedualeVisionTest frm = new FrmSchedualeVisionTest(_local_license_id,appointment.test_id,1);
                         frm.ShowDialog();
                     }
                 }
@@ -70,9 +71,15 @@ namespace DVLD.Applications.Manage_Applications.Tests
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmSchedualeVisionTest frm = new FrmSchedualeVisionTest(_local_license_id, (int)dataGridView1.CurrentRow.Cells[0].Value);
-            frm.ShowDialog();
-            _refresh();
+            appointment = ClsBussinessTestAppointment.get_appointmnet_by_id((int)dataGridView1.CurrentRow.Cells[0].Value);
+            if (appointment.locked == 1)
+                MessageBox.Show("Can't edit it as it LOCKED");
+            else
+            {
+                FrmSchedualeVisionTest frm = new FrmSchedualeVisionTest(_local_license_id, (int)dataGridView1.CurrentRow.Cells[0].Value);
+                frm.ShowDialog();
+                _refresh();
+            }
         }
 
         private void takeToolStripMenuItem_Click(object sender, EventArgs e)
