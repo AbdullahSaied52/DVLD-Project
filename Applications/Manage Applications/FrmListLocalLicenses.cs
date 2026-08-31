@@ -69,7 +69,19 @@ namespace DVLD.Manage_Applications
 
         private void visionTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmVisionTest frm = new FrmVisionTest((int)dataGridView1.CurrentRow.Cells[0].Value);
+            FrmShowTest frm = new FrmShowTest((int)dataGridView1.CurrentRow.Cells[0].Value,1);
+            frm.ShowDialog();
+        }
+
+        private void writtenTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmShowTest frm = new FrmShowTest((int)dataGridView1.CurrentRow.Cells[0].Value,2);
+            frm.ShowDialog();
+        }
+
+        private void speedTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmShowTest frm = new FrmShowTest((int)dataGridView1.CurrentRow.Cells[0].Value,3);
             frm.ShowDialog();
         }
     }
