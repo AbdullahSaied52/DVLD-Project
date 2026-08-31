@@ -58,11 +58,11 @@
     <Compile Include="Applications\Manage Applications\Tests\Control\CtrlApplicationInfo.Designer.cs">
       <DependentUpon>CtrlApplicationInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Applications\Manage Applications\Tests\FrmSchedualeVisionTest.cs">
+    <Compile Include="Applications\Manage Applications\Tests\FrmSchedualeTest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Applications\Manage Applications\Tests\FrmSchedualeVisionTest.Designer.cs">
-      <DependentUpon>FrmSchedualeVisionTest.cs</DependentUpon>
+    <Compile Include="Applications\Manage Applications\Tests\FrmSchedualeTest.Designer.cs">
+      <DependentUpon>FrmSchedualeTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Applications\Manage Applications\Tests\FrmTakeTest.cs">
       <SubType>Form</SubType>
@@ -70,11 +70,11 @@
     <Compile Include="Applications\Manage Applications\Tests\FrmTakeTest.Designer.cs">
       <DependentUpon>FrmTakeTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="Applications\Manage Applications\Tests\FrmVisionTest.cs">
+    <Compile Include="Applications\Manage Applications\Tests\FrmShowTest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Applications\Manage Applications\Tests\FrmVisionTest.Designer.cs">
-      <DependentUpon>FrmVisionTest.cs</DependentUpon>
+    <Compile Include="Applications\Manage Applications\Tests\FrmShowTest.Designer.cs">
+      <DependentUpon>FrmShowTest.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
@@ -182,14 +182,14 @@
     <EmbeddedResource Include="Applications\Manage Applications\Tests\Control\CtrlApplicationInfo.resx">
       <DependentUpon>CtrlApplicationInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Applications\Manage Applications\Tests\FrmSchedualeVisionTest.resx">
-      <DependentUpon>FrmSchedualeVisionTest.cs</DependentUpon>
+    <EmbeddedResource Include="Applications\Manage Applications\Tests\FrmSchedualeTest.resx">
+      <DependentUpon>FrmSchedualeTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\Manage Applications\Tests\FrmTakeTest.resx">
       <DependentUpon>FrmTakeTest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Applications\Manage Applications\Tests\FrmVisionTest.resx">
-      <DependentUpon>FrmVisionTest.cs</DependentUpon>
+    <EmbeddedResource Include="Applications\Manage Applications\Tests\FrmShowTest.resx">
+      <DependentUpon>FrmShowTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>

@@ -11,19 +11,19 @@ using System.Windows.Forms;
 
 namespace DVLD.Applications.Manage_Applications.Tests
 {
-    public partial class FrmSchedualeVisionTest : Form
+    public partial class FrmSchedualeTest : Form
     {
 
         public enum e_test_type { vision=0,written =1, speed=2}
-        public static FrmSchedualeVisionTest.e_test_type enum_test_type { get; set; }
-        int test_type_id { get; set; }
+        public static FrmSchedualeTest.e_test_type enum_test_type { get; set; }
+        public int test_type_id { get; set; }
 
         int _local_license_id;
         ClsBussinessLocalDrivingLicense app;
         ClsBussinessTestAppointment appointment;
         int _test_appointment_id;
         int _is_retake_test;
-        public FrmSchedualeVisionTest(int local_license_id,int appointment_id=-1,int retake=-1)
+        public FrmSchedualeTest(int local_license_id,int appointment_id=-1,int retake=-1)
         {
             _local_license_id = local_license_id;
             _test_appointment_id = appointment_id;
@@ -46,6 +46,7 @@ namespace DVLD.Applications.Manage_Applications.Tests
             {
                 lbltitle.Text = "Vision Test Appointment";
                 lblfees.Text = "10";
+                test_type_id = 1;
                 return 10;
 
             }
@@ -53,12 +54,14 @@ namespace DVLD.Applications.Manage_Applications.Tests
             {
                 lbltitle.Text = "Written Test Appointment";
                 lblfees.Text = "20";
+                test_type_id = 2;
                 return 20;
             }
             else
             {
                 lbltitle.Text = "Speed Test Appointment";
                 lblfees.Text = "35";
+                test_type_id = 3;
                 return 35;
             }
 
@@ -126,7 +129,7 @@ namespace DVLD.Applications.Manage_Applications.Tests
             _refresh();
             app = ClsBussinessLocalDrivingLicense.find_local_license_by_id(_local_license_id);
             
-            lblfees.Text = app.fees_for_app.ToString();
+            //lblfees.Text = app.fees_for_app.ToString();
             lbllicenseclass.Text = app.liecense_info.license_name;
             lblname.Text = app.person.FirstName + " " + app.person.SecondName;
             lbllicenseclass.Text = app.liecense_info.license_name;

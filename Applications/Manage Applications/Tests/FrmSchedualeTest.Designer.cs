@@ -1,6 +1,6 @@
 ﻿namespace DVLD.Applications.Manage_Applications.Tests
 {
-    partial class FrmSchedualeVisionTest
+    partial class FrmSchedualeTest
     {
         /// <summary>
         /// Required designer variable.
