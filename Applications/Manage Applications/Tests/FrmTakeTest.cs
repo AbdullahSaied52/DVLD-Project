@@ -45,9 +45,17 @@ namespace DVLD.Applications.Manage_Applications.Tests
         private void btnsave_Click(object sender, EventArgs e)
         {
             ClsBussinessTests test = new ClsBussinessTests();
+            
             test.notes = textBox1.Text;
             if (rdpass.Checked == true)
+            {
                 test.result = 1;
+                if (_test_type == 3)
+                {
+                    local_license.app_status = 3;
+                    local_license.update_application();
+                }
+            }
             else
                 test.result = 0;
             test.test_appointment_id = _test_appointment_id;

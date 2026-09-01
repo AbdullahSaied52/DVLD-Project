@@ -37,9 +37,9 @@
             this.deleteApplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scheduleTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.visionTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
             this.writtenTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.speedTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +62,8 @@
             this.deleteApplicationToolStripMenuItem,
             this.scheduleTestToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(226, 146);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(226, 124);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.context_on_opening);
             // 
             // cancelApplicationToolStripMenuItem
             // 
@@ -105,9 +106,23 @@
             // visionTestToolStripMenuItem
             // 
             this.visionTestToolStripMenuItem.Name = "visionTestToolStripMenuItem";
-            this.visionTestToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.visionTestToolStripMenuItem.Size = new System.Drawing.Size(157, 24);
             this.visionTestToolStripMenuItem.Text = "Vision Test";
             this.visionTestToolStripMenuItem.Click += new System.EventHandler(this.visionTestToolStripMenuItem_Click);
+            // 
+            // writtenTestToolStripMenuItem
+            // 
+            this.writtenTestToolStripMenuItem.Name = "writtenTestToolStripMenuItem";
+            this.writtenTestToolStripMenuItem.Size = new System.Drawing.Size(157, 24);
+            this.writtenTestToolStripMenuItem.Text = "Written Test";
+            this.writtenTestToolStripMenuItem.Click += new System.EventHandler(this.writtenTestToolStripMenuItem_Click);
+            // 
+            // speedTestToolStripMenuItem
+            // 
+            this.speedTestToolStripMenuItem.Name = "speedTestToolStripMenuItem";
+            this.speedTestToolStripMenuItem.Size = new System.Drawing.Size(157, 24);
+            this.speedTestToolStripMenuItem.Text = "Speed Test";
+            this.speedTestToolStripMenuItem.Click += new System.EventHandler(this.speedTestToolStripMenuItem_Click);
             // 
             // button1
             // 
@@ -119,20 +134,6 @@
             this.button1.Text = "Add New";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // writtenTestToolStripMenuItem
-            // 
-            this.writtenTestToolStripMenuItem.Name = "writtenTestToolStripMenuItem";
-            this.writtenTestToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-            this.writtenTestToolStripMenuItem.Text = "Written Test";
-            this.writtenTestToolStripMenuItem.Click += new System.EventHandler(this.writtenTestToolStripMenuItem_Click);
-            // 
-            // speedTestToolStripMenuItem
-            // 
-            this.speedTestToolStripMenuItem.Name = "speedTestToolStripMenuItem";
-            this.speedTestToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-            this.speedTestToolStripMenuItem.Text = "Speed Test";
-            this.speedTestToolStripMenuItem.Click += new System.EventHandler(this.speedTestToolStripMenuItem_Click);
             // 
             // FrmListLocalLicenses
             // 
