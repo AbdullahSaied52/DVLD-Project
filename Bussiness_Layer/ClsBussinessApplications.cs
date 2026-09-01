@@ -89,9 +89,9 @@ namespace Bussiness_Layer
             ClsDataApplications.cancel_application_by_app_id(app_id);
         }
 
-        public static void delete_applications(int app_id)
+        public  void delete_applications()
         {
-            ClsDataApplications.delete_application_by_id(app_id);
+            ClsDataApplications.delete_application_by_id(this.app_id);
         }
 
         public static ClsBussinessApplications find_app_by_id(int id)

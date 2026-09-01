@@ -46,9 +46,11 @@ namespace Bussiness_Layer
             ClsDataLocalLicenses.add_new_local_license(this.app_id, this.license_class_id);
         }
 
-        public static void delete_local_license(int local_license_id)
+        public void delete_local_license()
         {
-            ClsDataLocalLicenses.delete_local_license(local_license_id);
+            ClsDataLocalLicenses.delete_local_license(this.local_license_id);
+            base.delete_applications();
+
         }
 
         public static ClsBussinessLocalDrivingLicense find_local_license_by_id(int id)
@@ -81,6 +83,11 @@ namespace Bussiness_Layer
         {
             base.update_application();
             ClsDataLocalLicenses.update_local_license(this.local_license_id, this.license_class_id);
+        }
+
+        public bool GetPassedTestByLocalLicense(int test_type)
+        {
+            return ClsDataLocalLicenses.get_passed_test_type(this.local_license_id, test_type);
         }
 
     }
