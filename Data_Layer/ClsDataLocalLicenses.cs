@@ -111,6 +111,34 @@ namespace Data_Layer
             }
         }
 
+        public static bool get_passed_test_type(int license_id,int test_type)
+        {
+            int res = 0;
+            using (SqlConnection cnct=new SqlConnection(connection_string))
+            {
+                
+                string query = @"select top 1 TestResult from Tests inner join
+                        TestAppointments on TestAppointments.TestAppointmentID=Tests.TestAppointmentID
+                        inner join LocalDrivingLicenseApplications on LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID=
+                        TestAppointments.LocalDrivingLicenseApplicationID
+                        where 
+                        TestAppointments.TestTypeID=@type_id
+                        and LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID=@local_id
+                        order by Tests.TestAppointmentID desc";
+                using(SqlCommand cmd=new SqlCommand(query, cnct))
+                {
+                    cmd.Parameters.AddWithValue("@type_id", test_type);
+                    cmd.Parameters.AddWithValue("@local_id", license_id);
+                    cnct.Open();
 
+                    object result = cmd.ExecuteScalar();
+                    res = Convert.ToInt32(result);
+
+                    }
+                }
+            return res == 1 ? true : false;
+        }
+            
+        }
     }
-}
+
