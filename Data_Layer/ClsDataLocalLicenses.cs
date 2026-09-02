@@ -139,8 +139,29 @@ namespace Data_Layer
             return res == 1 ? true : false;
         }
 
+        public static int get_active_license(int personID, int license_class)
+        {
+            int res = 0;
+            using (SqlConnection cnct = new SqlConnection(connection_string))
+            {
+                string query = @" select Licenses.LicenseID from Licenses 
+                                inner join Drivers on Drivers.DriverID=Licenses.DriverID
+                                where Licenses.LicenseClass=@class_id and
+                                Drivers.PersonID=@person_id
+                                and Licenses.IsActive=1 ";
+                using(SqlCommand cmd=new SqlCommand(query,cnct))
+                {
+                    cmd.Parameters.AddWithValue("@class_id", license_class);
+                    cmd.Parameters.AddWithValue("@person_id", personID);
+                    cnct.Open();
+                    object result = cmd.ExecuteScalar();
+                    res = Convert.ToInt32(result);
+                }
+            }
+            return res;
 
-            
         }
+
+    }
     }
 
