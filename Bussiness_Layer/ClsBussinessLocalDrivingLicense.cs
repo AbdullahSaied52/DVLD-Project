@@ -90,5 +90,10 @@ namespace Bussiness_Layer
             return ClsDataLocalLicenses.get_passed_test_type(this.local_license_id, test_type);
         }
 
+        public bool get_active_license(int person_id,int license_class)
+        {
+            return ClsDataLocalLicenses.get_active_license(person_id, license_class) > 0 ? true : false;
+        }
+
     }
 }
