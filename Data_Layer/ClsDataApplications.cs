@@ -52,6 +52,7 @@ namespace Data_Layer
                             inner join LocalDrivingLicenseApplications on
                             Applications.ApplicationID=LocalDrivingLicenseApplications.ApplicationID
                             where Applications.ApplicationStatus=1
+                            or Applications.ApplicationStatus=3
                             and LocalDrivingLicenseApplications.LicenseClassID=@license_id
                             and Applications.ApplicantPersonID=@person_id
                             and Applications.ApplicationTypeID=@app_type_id ";
