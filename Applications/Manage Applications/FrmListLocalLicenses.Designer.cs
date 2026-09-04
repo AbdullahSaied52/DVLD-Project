@@ -40,6 +40,8 @@
             this.writtenTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.speedTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
+            this.issueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.driverLicenseInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -60,9 +62,11 @@
             this.showToolStripMenuItem,
             this.editApplicationToolStripMenuItem,
             this.deleteApplicationToolStripMenuItem,
-            this.scheduleTestToolStripMenuItem});
+            this.scheduleTestToolStripMenuItem,
+            this.issueToolStripMenuItem,
+            this.driverLicenseInfoToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(226, 124);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(284, 194);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.context_on_opening);
             // 
             // cancelApplicationToolStripMenuItem
@@ -135,6 +139,19 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // issueToolStripMenuItem
+            // 
+            this.issueToolStripMenuItem.Name = "issueToolStripMenuItem";
+            this.issueToolStripMenuItem.Size = new System.Drawing.Size(283, 24);
+            this.issueToolStripMenuItem.Text = "Issue Driving License(first time)";
+            this.issueToolStripMenuItem.Click += new System.EventHandler(this.issueToolStripMenuItem_Click);
+            // 
+            // driverLicenseInfoToolStripMenuItem
+            // 
+            this.driverLicenseInfoToolStripMenuItem.Name = "driverLicenseInfoToolStripMenuItem";
+            this.driverLicenseInfoToolStripMenuItem.Size = new System.Drawing.Size(283, 24);
+            this.driverLicenseInfoToolStripMenuItem.Text = "Driver License Info";
+            // 
             // FrmListLocalLicenses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -164,5 +181,7 @@
         private System.Windows.Forms.ToolStripMenuItem visionTestToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem writtenTestToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem speedTestToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem issueToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem driverLicenseInfoToolStripMenuItem;
     }
 }

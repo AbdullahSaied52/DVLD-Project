@@ -113,12 +113,14 @@ namespace DVLD.Manage_Applications
                 deleteApplicationToolStripMenuItem.Enabled = false;
                 editApplicationToolStripMenuItem.Enabled = false;
                 scheduleTestToolStripMenuItem.Enabled = false;
+                issueToolStripMenuItem.Enabled = true;
             }
             else if (laocal_app.app_status == 2)
             {
                 cancelApplicationToolStripMenuItem.Enabled = false;
                 editApplicationToolStripMenuItem.Enabled = false;
                 scheduleTestToolStripMenuItem.Enabled = false;
+                issueToolStripMenuItem.Enabled = false;
             }
             else
             {
@@ -126,6 +128,7 @@ namespace DVLD.Manage_Applications
                 deleteApplicationToolStripMenuItem.Enabled = true;
                 editApplicationToolStripMenuItem.Enabled = true;
                 scheduleTestToolStripMenuItem.Enabled = true;
+                issueToolStripMenuItem.Enabled = false;
 
                 visionTestToolStripMenuItem.Enabled = !passed_vision;
                 writtenTestToolStripMenuItem.Enabled = passed_vision && !passed_written;
@@ -135,6 +138,12 @@ namespace DVLD.Manage_Applications
 
 
 
+        }
+
+        private void issueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmIssueLicense frm = new FrmIssueLicense((int)dataGridView1.CurrentRow.Cells[0].Value);
+            frm.ShowDialog();
         }
     }
 }

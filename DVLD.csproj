@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Applications\Manage Applications\FrmIssueLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\Manage Applications\FrmIssueLicense.Designer.cs">
+      <DependentUpon>FrmIssueLicense.cs</DependentUpon>
+    </Compile>
     <Compile Include="Applications\Manage Applications\FrmShowDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +182,9 @@
     <Compile Include="Users\FrmShowUserInfo.Designer.cs">
       <DependentUpon>FrmShowUserInfo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Applications\Manage Applications\FrmIssueLicense.resx">
+      <DependentUpon>FrmIssueLicense.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Applications\Manage Applications\FrmShowDetails.resx">
       <DependentUpon>FrmShowDetails.cs</DependentUpon>
     </EmbeddedResource>
