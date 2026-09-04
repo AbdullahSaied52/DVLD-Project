@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="ClsDataDriver.cs" />
     <Compile Include="ClsDataLicenseClass.cs" />
+    <Compile Include="ClsDataLicenses.cs" />
     <Compile Include="ClsDataLocalLicenses.cs" />
     <Compile Include="ClsDataPerson.cs" />
     <Compile Include="ClsDataApplications.cs" />
