@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Bussiness_Layer
 {
-    internal class ClsBUssinessDriver
+    public class ClsBUssinessDriver
     {
         public int driver_id { get; set; }
 
@@ -17,7 +17,7 @@ namespace Bussiness_Layer
         public int created_by_user_id { get; set; }
         public DateTime date { get; set; }
 
-        ClsBUssinessDriver()
+        public ClsBUssinessDriver()
         {
             this.person_id = -1;
             this.date = DateTime.Now;
@@ -25,7 +25,7 @@ namespace Bussiness_Layer
             this.driver_id = -1;
         }
 
-        ClsBUssinessDriver(int driverID,int personID,int UserID,DateTime date)
+        public ClsBUssinessDriver(int driverID,int personID,int UserID,DateTime date)
         {
             this.person_id = personID;
             this.date = date;

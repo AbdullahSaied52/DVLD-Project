@@ -19,7 +19,7 @@ namespace Bussiness_Layer
             this.local_license_id = -1;
             this.license_class_id = -1;
         }
-        public ClsBussinessLocalDrivingLicense(int local_license_id,int license_calss_id, 
+        public ClsBussinessLocalDrivingLicense(int local_license_id,int license_class_id, 
             int app_id, int personid, DateTime date, DateTime last_date, int apptypeid, byte appstatus, float fees
             , int userid)
         {
@@ -36,7 +36,7 @@ namespace Bussiness_Layer
             this.person = ClsBussinessperson.get_person_by_id(personid);
             this.userinfo = ClsBussinessUser.get_user_ByID(userid);
             this.app_type = ClsBussinessApplication_test_types.get_application_by_id(apptypeid);
-            this.liecense_info = ClsBussinessLicenseClass.find_license_class_by_id(license_calss_id);
+            this.liecense_info = ClsBussinessLicenseClass.find_license_class_by_id(license_class_id);
         }
 
 
@@ -60,8 +60,16 @@ namespace Bussiness_Layer
             {
                 ClsBussinessApplications app = ClsBussinessApplications.find_app_by_id(app_id);
 
-                return new ClsBussinessLocalDrivingLicense(id, license_class_id, app_id, app.person_id, app.date, app.last_status_date, app.app_type_id,
-                    app.app_status, app.fees_for_app, app.user_id);
+                return new ClsBussinessLocalDrivingLicense(id,
+    license_class_id,
+    app_id,
+    app.person_id,
+    app.date,
+    app.last_status_date, 
+    app.app_type_id,      
+    app.app_status,
+    app.fees_for_app,
+    app.user_id);
             }
             else return null;
         }

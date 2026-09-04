@@ -46,6 +46,7 @@
     <Compile Include="ClsBussinessApplication_test_types.cs" />
     <Compile Include="ClsBUssinessDriver.cs" />
     <Compile Include="ClsBussinessLicenseClass.cs" />
+    <Compile Include="ClsBussinessLicenses.cs" />
     <Compile Include="ClsBussinessManageLocalLicenses.cs" />
     <Compile Include="ClsBussinessTestAppointment.cs" />
     <Compile Include="ClsBussinessTests.cs" />
