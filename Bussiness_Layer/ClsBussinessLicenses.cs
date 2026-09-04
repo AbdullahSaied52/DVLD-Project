@@ -76,21 +76,28 @@ namespace Bussiness_Layer
         this.user_id);
         }
 
-        //public ClsBussinessLicenses find_license_by_app_id()
-        //{
-        //    int license_id = -1;
-        //    int app_id = -1;
-        //    int driver_id = -1;
-        //    int license_class_id = -1;
-        //    DateTime issue_date = DateTime.MinValue;
-        //    DateTime expired_date = DateTime.MinValue;
-        //    string notes = string.Empty;
-        //    float fees = 0;
-        //    short active = 0;
-        //    int issue_reason = -1;
-        //    int user_id = -1;
+        public static ClsBussinessLicenses find_license_by_app_id(int app_id)
+        {
+            int license_id = -1;
+            int driver_id = -1;
+            int license_class_id = -1;
+            DateTime issue_date = DateTime.MinValue;
+            DateTime expired_date = DateTime.MinValue;
+            string notes = string.Empty;
+            float fees = 0;
+            short active = 0;
+            int issue_reason = -1;
+            int user_id = -1;
 
-        //    if (ClsDataLicenses.find_license_by_app_id())
-        //}
+            if (ClsDataLicenses.find_license_by_app_id(ref license_id, app_id, ref driver_id, ref license_class_id
+                , ref issue_date, ref expired_date, ref notes, ref fees, ref active, ref issue_reason, ref user_id))
+            {
+                return new ClsBussinessLicenses(license_id, app_id, driver_id,
+             license_class_id, issue_date, expired_date,
+             notes, fees, active, issue_reason, user_id);
+            }
+            else
+                return null;
+        }
     }
 }
