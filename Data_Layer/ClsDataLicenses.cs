@@ -78,7 +78,7 @@ namespace Data_Layer
                 string query = @"select * from Licenses where ApplicationID=@app_id";
                 using(SqlCommand cmd=new SqlCommand(query,cnct))
                 {
-                    cmd.Parameters.AddWithValue("@pp_id", app_id);
+                    cmd.Parameters.AddWithValue("@app_id", app_id);
                     cnct.Open();
                     using(SqlDataReader reader=cmd.ExecuteReader())
                     {
@@ -104,7 +104,7 @@ namespace Data_Layer
 
                             fees = Convert.ToSingle(reader["PaidFees"]);
                             is_active = Convert.ToInt16(reader["IsActive"]);
-                            issue_reaseon = (int)reader["IssueReason"];
+                            issue_reaseon = Convert.ToByte( reader["IssueReason"]);
                             user_id = (int)reader["CreatedByUserID"];
                         }
                     }
