@@ -58,6 +58,12 @@
     <Compile Include="Applications\Manage Applications\FrmShowDetails.Designer.cs">
       <DependentUpon>FrmShowDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Applications\Manage Applications\FrmShowLicenseInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\Manage Applications\FrmShowLicenseInfo.Designer.cs">
+      <DependentUpon>FrmShowLicenseInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Applications\Manage Applications\Tests\Control\CtrlApplicationInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -187,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\Manage Applications\FrmShowDetails.resx">
       <DependentUpon>FrmShowDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\Manage Applications\FrmShowLicenseInfo.resx">
+      <DependentUpon>FrmShowLicenseInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\Manage Applications\Tests\Control\CtrlApplicationInfo.resx">
       <DependentUpon>CtrlApplicationInfo.cs</DependentUpon>

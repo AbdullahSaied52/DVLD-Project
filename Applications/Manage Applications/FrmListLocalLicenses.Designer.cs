@@ -151,6 +151,7 @@
             this.driverLicenseInfoToolStripMenuItem.Name = "driverLicenseInfoToolStripMenuItem";
             this.driverLicenseInfoToolStripMenuItem.Size = new System.Drawing.Size(283, 24);
             this.driverLicenseInfoToolStripMenuItem.Text = "Driver License Info";
+            this.driverLicenseInfoToolStripMenuItem.Click += new System.EventHandler(this.driverLicenseInfoToolStripMenuItem_Click);
             // 
             // FrmListLocalLicenses
             // 

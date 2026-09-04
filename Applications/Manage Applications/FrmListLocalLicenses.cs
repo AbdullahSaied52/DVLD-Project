@@ -113,7 +113,17 @@ namespace DVLD.Manage_Applications
                 deleteApplicationToolStripMenuItem.Enabled = false;
                 editApplicationToolStripMenuItem.Enabled = false;
                 scheduleTestToolStripMenuItem.Enabled = false;
-                issueToolStripMenuItem.Enabled = true;
+                ClsBussinessLicenses license = ClsBussinessLicenses.find_license_by_app_id(laocal_app.app_id);
+                if (license != null)
+                {
+                    driverLicenseInfoToolStripMenuItem.Enabled = true;
+                    issueToolStripMenuItem.Enabled = false;
+                }
+                else
+                {
+                    issueToolStripMenuItem.Enabled = true;
+                    driverLicenseInfoToolStripMenuItem.Enabled = false;
+                }
             }
             else if (laocal_app.app_status == 2)
             {
@@ -144,6 +154,12 @@ namespace DVLD.Manage_Applications
         {
             FrmIssueLicense frm = new FrmIssueLicense((int)dataGridView1.CurrentRow.Cells[0].Value);
             frm.ShowDialog();
+        }
+
+        private void driverLicenseInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmShowLicenseInfo frm = new FrmShowLicenseInfo((int)dataGridView1.CurrentRow.Cells[0].Value);
+            frm.Show();
         }
     }
 }
