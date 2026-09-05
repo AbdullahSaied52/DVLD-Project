@@ -70,5 +70,11 @@ namespace DVLD
         {
 
         }
+
+        private void driversToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmListDrivers frm = new FrmListDrivers();
+            frm.Show();
+        }
     }
 }
