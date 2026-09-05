@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -32,5 +33,22 @@ namespace Data_Layer
             return res;
         }
 
+        public static DataTable get_all_drivers()
+        {
+            DataTable dt = new DataTable();
+            using(SqlConnection cnct=new SqlConnection(connection_string))
+            {
+                string query = @"select * from Drivers_View";
+                using(SqlCommand cmd=new SqlCommand(query,cnct))
+                {
+                    cnct.Open();
+                    using(SqlDataReader reader=cmd.ExecuteReader())
+                    {
+                        dt.Load(reader);
+                    }
+                }
+            }
+            return dt;
+        }
     }
 }
