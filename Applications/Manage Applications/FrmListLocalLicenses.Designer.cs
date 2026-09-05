@@ -42,6 +42,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.issueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.driverLicenseInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showPersonLicenseHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -64,9 +65,10 @@
             this.deleteApplicationToolStripMenuItem,
             this.scheduleTestToolStripMenuItem,
             this.issueToolStripMenuItem,
-            this.driverLicenseInfoToolStripMenuItem});
+            this.driverLicenseInfoToolStripMenuItem,
+            this.showPersonLicenseHistoryToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(284, 194);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(284, 218);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.context_on_opening);
             // 
             // cancelApplicationToolStripMenuItem
@@ -153,6 +155,13 @@
             this.driverLicenseInfoToolStripMenuItem.Text = "Driver License Info";
             this.driverLicenseInfoToolStripMenuItem.Click += new System.EventHandler(this.driverLicenseInfoToolStripMenuItem_Click);
             // 
+            // showPersonLicenseHistoryToolStripMenuItem
+            // 
+            this.showPersonLicenseHistoryToolStripMenuItem.Name = "showPersonLicenseHistoryToolStripMenuItem";
+            this.showPersonLicenseHistoryToolStripMenuItem.Size = new System.Drawing.Size(283, 24);
+            this.showPersonLicenseHistoryToolStripMenuItem.Text = "Show Person License History";
+            this.showPersonLicenseHistoryToolStripMenuItem.Click += new System.EventHandler(this.showPersonLicenseHistoryToolStripMenuItem_Click);
+            // 
             // FrmListLocalLicenses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -184,5 +193,6 @@
         private System.Windows.Forms.ToolStripMenuItem speedTestToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem issueToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem driverLicenseInfoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showPersonLicenseHistoryToolStripMenuItem;
     }
 }

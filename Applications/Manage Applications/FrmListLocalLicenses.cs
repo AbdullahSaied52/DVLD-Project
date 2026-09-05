@@ -161,5 +161,10 @@ namespace DVLD.Manage_Applications
             FrmShowLicenseInfo frm = new FrmShowLicenseInfo((int)dataGridView1.CurrentRow.Cells[0].Value);
             frm.Show();
         }
+
+        private void showPersonLicenseHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
